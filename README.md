@@ -41,7 +41,7 @@ Plataforma web interactiva en 3D que monitorea en tiempo real la neuroquímica, 
 
  
 
-© 2026 Dierry Quintero. Todos los derechos reservados.
+© 2026 Dierry Querales. Todos los derechos reservados.
 
  
 
