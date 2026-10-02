@@ -1,0 +1,94 @@
+:root {
+  --bg-dark: #0f172a;
+  --panel-bg: rgba(30, 41, 59, 0.7);
+  --accent-cyan: #38bdf8;
+  --accent-purple: #a855f7;
+  --text-main: #f8fafc;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.9);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.contenedor-principal {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  height: calc(100vh - 100px);
+  padding: 20px;
+  gap: 20px;
+}
+
+#contenedor-3d {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #1e293b 0%, #0f172a 100%);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.panel-control {
+  background: var(--panel-bg);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Estilo para las cajas dinámicas insertadas desde JS */
+.caja-estilo-normal {
+  background: rgba(15, 23, 42, 0.6);
+  border-left: 4px solid var(--accent-cyan);
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.caja-estilo-easteregg {
+  background: rgba(88, 28, 135, 0.4);
+  border-left: 4px solid var(--accent-purple);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Modal */
+dialog {
+  border: none;
+  border-radius: 16px;
+  background-color: #1e293b;
+  color: var(--text-main);
+  padding: 25px;
+  max-width: 400px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+dialog::backdrop {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(4px);
+}
+
+#btn-cerrar-modal {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 15px;
+}
