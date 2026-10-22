@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bio-Monitoring Station</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1>Bio-Monitoring Station</h1>
+    <p>Monitoreo Neuroquímico y Circadiano en Tiempo Real</p>
+  </header>
+
+  <main class="contenedor-principal">
+    <!-- Acomodador del Modelo 3D -->
+    <div id="contenedor-3d">
+      <model-viewer 
+       src="human-brain/source/Rotten Brain.glb" 
+       alt="Modelo 3D del Cerebro - ChronoBrain" 
+       auto-rotate 
+       camera-controls 
+       shadow-intensity="1.5"
+       shadow-softness="0.8"
+       exposure="1.2"
+       environment-image="neutral"
+       style="width: 100%; height: 500px; background-color: transparent;">
+</model-viewer>
+    </div>
+
+    <!-- Panel Lateral donde se cargarán dinámicamente las cajas con JS -->
+    <aside class="panel-control"
+      <div id="reloj-biologico">
+        <span id="hora-actual">--:--</span>
+        <p id="fase-circadiana">Sincronizando con el uso horario...</p>
+      </div>
+
+      <!-- Contenedor vacío para insertar las tarjetas desde JS -->
+      <div id="panel-informacion"></div>
+    </aside>
+  </main>
+
+  <!-- Ventana Modal Nativa HTML5 -->
+  <dialog id="modalEasterEgg">
+    <div class="contenido-modal">
+      <h2 id="modal-titulo">Dato Curioso</h2>
+      <p id="modal-texto"></p>
+      <button id="btn-cerrar-modal">Cerrar</button>
+    </div>
+  </dialog>
+  <script src="js/main.js"></script>
+  <!--A. La Melatonina y el ritmo circadiano   Base científica: Se sintetiza en los pinealocitos de la glándula pineal a partir del aminoácido triptófano, pasando por serotonina.   Mecanismo: El núcleo supraquiasmático (NSQ) del hipotálamo actúa como el reloj central. En la oscuridad, estimula la liberación de norepinefrina, lo que activa la enzima arilalquilamina N-acetiltransferasa (AANAT) para producir melatonina y señalar al cuerpo que es hora de dormir.-->
+  <!--1. Melatonina: Pico en ascenso (La señal de la noche)Comportamiento: A las 12:00 AM, los niveles de melatonina producida por la glándula pineal están cerca de alcanzarte su pico nocturno o en un incremento acelerado (que suele alcanzar su punto máximo entre las 2:00 y las 4:00 AM).   Mecanismo biológico: En la oscuridad, las neuronas del NSQ dejan de inhibir al ganglio cervical superior, lo que desencadena la liberación de noradrenalina y activa la enzima AANAT en los pinealocitos para convertir serotonina en melatonina.Efecto: Reduce la temperatura corporal central, la presión arterial y disminuye el estado de alerta del cerebro.-->
+ 
+  <!--2. Cortisol: En su nadir (El nivel más bajo del día)   Comportamiento: El cortisol (la "hormona del estrés"), secretado por el eje hipotálamo-hipófisis-adrenal (HPA), alcanza su nivel mínimo diario (nadir) alrededor de la medianoche.   Mecanismo biológico: El hipotálamo reduce temporalmente la liberación de CRH (hormona liberadora de corticotropina), lo que apaga casi por completo la señal de la hipófisis (ACTH).Efecto: Permite que el sistema nervioso simpático se desactive, facilitando la relajación vascular, la reducción de la frecuencia cardíaca y la entrada en fases de descanso fisiológico.-->
+ 
+  <!--3. Hormona del Crecimiento (GH): El gran pulso nocturno   Comportamiento: Si estás dormido o iniciando el sueño a las 12:00 AM, el cerebro libera el pulso más potente de Hormona del Crecimiento (Growth Hormone) de todo el ciclo de 24 horas.   Mecanismo biológico: Ocurre durante la transición hacia las fases de sueño de ondas lentas (SWS o sueño profundo). El hipotálamo libera GHRH (hormona liberadora de somatotropina) e inhibe la somatostatina, enviando un pulso masivo a la hipófisis anterior.   Efecto: Estimula la reparación de tejidos musculares, el crecimiento óseo, la síntesis de proteínas y la consolidación de la memoria metabólica.-->
+ 
+  <!--Leptina (La hormona de la saciedad)   Comportamiento: Sus niveles en sangre y en el cerebro aumentan durante la noche, alcanzando valores elevados alrededor de la medianoche.Mecanismo biológico: Producida por el tejido adiposo, cruza la barrera hematoencefálica y actúa sobre el núcleo arqueado del hipotálamo.Efecto: Suprime la sensación de hambre para evitar que el cerebro se despierte con ganas de comer a mitad de la noche.-->
+  
+  <!--4. Prolactina y Proopiomelanocortina (Endorfinas)Comportamiento: Los niveles de prolactina en la hipófisis comienzan a elevarse progresivamente durante la medianoche y las primeras horas de la madrugada.   Efecto: Además de sus funciones reproductivas, actúa como un neuromodulador de la inmunidad y apoya la plasticidad neuronal durante la noche. -->
+  
+  <!--Ghrelina (La hormona del hambre)
+Comportamiento: En un ciclo de sueño normal, sus niveles caen o se mantienen bajos durante las primeras horas de la noche.
+Mecanismo biológico: El hipotálamo reduce la sensibilidad a los estímulos orexigénicos (que estimulan el apetito).
+Efecto negativo si estás despierto: Si permaneces despierto a las 12:00 AM, la ghrelina se eleva anormalmente mientras la leptina cae. Esto activa las vías de recompensa en el cerebro e induce antojos nocturnos de alimentos ricos en carbohidratos y grasas.-->
+ 
+  <!--3. TSH (Hormona Estimulante de la Tiroides)Comportamiento: La TSH alcanza su pico circadiano máximo del día justo antes o alrededor de la medianoche (entre las 11:00 PM y las 2:00 AM).   Mecanismo biológico: La adenohipófisis secreta un pulso masivo de TSH bajo las órdenes del hipotálamo (mediante la neurohormona TRH).Efecto: Prepara a la glándula tiroides para el metabolismo basal del día siguiente. El sueño de ondas lentas atenúa un exceso de TSH, por lo que privarse de sueño a esta hora provoca picos descontrolados de TSH, alterando el gasto energético.-->
+ 
+  <!--Insulina (Sensibilidad cerebral y metabólica)   Comportamiento: La sensibilidad a la insulina cae a su punto más bajo en la medianoche.   Mecanismo biológico: El núcleo supraquiasmático (NSQ) reduce la captación de glucosa periférica para ralentizar el metabolismo mientras duermes.Efecto: El cerebro reduce el consumo energético general. Cenar pesado cerca de las 12:00 AM genera picos severos de glucosa e hiperinsulinemia porque las células no responden bien a la insulina durante la noche. -->
+ 
+  <!--Vasopresina y Aldosterona (Control de líquidos)
+Comportamiento: Aumentan progresivamente al inicio de la noche.
+
+Mecanismo biológico: La vasopresina (liberada por la neurohipófisis) y la aldosterona coordinan la señalización neuroendocrina con los riñones.
+
+Efecto: Concentran la orina y reducen el volumen urinario para no interrumpir el descanso durante la madrugada.-->
+  
+  <!---->
+</body>
+</html>
