@@ -92,3 +92,22 @@ dialog::backdrop {
   cursor: pointer;
   margin-top: 15px;
 }
+.btn-signup {
+  background-color: #df5819;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.btn-login {
+  background-color: #df5819;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 15px;
+}
